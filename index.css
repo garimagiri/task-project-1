@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap');
+
+:root {
+    --primary-color:#654ea3 ;
+    --dark-gray: #6B7280;
+    --off-white: #F3F4F6;
+}
+
+body{
+    
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #eaafc8, #14b7df);
+}
+
+.heading-color{
+    color: var(--primary-color);
+}
+
+.card-border-radius{
+    border-radius: 15px !important;
+}
+
+.card p {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: rgb(98, 97, 97);
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.gradient-color {
+    background: #f189b4;
+    background: -webkit-linear-gradient(to bottom, #14b7df, #f189b4);
+    background: linear-gradient(to bottom, #3dc6e9, #f189b4);
+    padding: 0.5rem 2rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 50px;
+}
+.gradient-color:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.gradient-color:active:after {
+    background: transparent;
+}
+
+.gradient-color:hover:before {
+    opacity: 1;
+}
+
+.gradient-color:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f189b4;
+    background: -webkit-linear-gradient(to bottom, #14b7df, #f189b4);
+    background: linear-gradient(to bottom, #3dc6e9, #f189b4);
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.float-area{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  } 
+
+.floating-img{
+    transform: translateY(-10%);
+    animation: floater 1.5s infinite;
+    transition: ease 0.5s;
+    position: absolute;
+    top: -70px;
+  }
+
+  @keyframes floater {
+    0%{transform: translateY(-10%);transition: ease 0.5s;}
+    50%{transform: translateY(10%);transition: ease 0.5s;}
+  }
+
